@@ -1,6 +1,6 @@
 ﻿namespace WestCoastEducation;
 
-public class Utbildningsledare : Lärare
+public class Utbildningsledare
 {
 
 }

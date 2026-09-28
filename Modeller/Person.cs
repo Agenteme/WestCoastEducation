@@ -14,14 +14,14 @@ public abstract class Person
     {
         Förnamn = förnamn;
         Efternamn = efternamn;
-        Personnummer = personnummer;
         Telefonnummer = telefonnummer;
+        Personnummer = personnummer;
         Adress = adress;
         Postnummer = postnummer;
         Ort = ort;
     }
     public override string ToString()
     {
-        return $"Förnamn: {Förnamn} Efternamn: {Efternamn} Personnummer: ({Personnummer}), Adress: {Adress}, Postnummer: {Postnummer} Ort: {Ort}, Telefon: {Telefonnummer}";
+        return $"Förnamn: {Förnamn}, Efternamn: {Efternamn}, Telefon: {Telefonnummer}, Personnummer: {Personnummer}, Adress: {Adress}, Postnummer: {Postnummer}, Ort: {Ort}";
     }
 }
