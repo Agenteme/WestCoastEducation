@@ -20,8 +20,9 @@ public abstract class Person
         Postnummer = postnummer;
         Ort = ort;
     }
+    protected virtual string Roll => "Person";
     public override string ToString()
     {
-        return $"Förnamn: {Förnamn}, Efternamn: {Efternamn}, Telefon: {Telefonnummer}, Personnummer: {Personnummer}, Adress: {Adress}, Postnummer: {Postnummer}, Ort: {Ort}";
+        return $"Roll: {Roll}, Förnamn: {Förnamn}, Efternamn: {Efternamn}, Telefon: {Telefonnummer}, Personnummer: {Personnummer}, Adress: {Adress}, Postnummer: {Postnummer}, Ort: {Ort}";
     }
 }

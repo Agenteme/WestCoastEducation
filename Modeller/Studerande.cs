@@ -7,4 +7,9 @@ public class Studerande : Person
     {
         
     }
+    protected override string Roll => "Studerande";
+    public override string ToString()
+    {
+        return $"{base.ToString()}";
+    }
 }
