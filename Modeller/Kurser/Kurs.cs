@@ -5,6 +5,7 @@ public abstract class Kurs
     public int Kursnummer { get; set; }
     public string Kurstitel { get; set; }
     public int Kurslängd { get; set; }
+    public Tidsenhet Enhet { get; set; }
     public DateTime Startdatum { get; set; }
     public DateTime Slutdatum { get; set; }
 
@@ -15,5 +16,5 @@ public abstract class Kurs
         Kurslängd = kurslängd;
         Startdatum = startdatum;
         Slutdatum = slutdatum;
-    } 
+    }
 }
