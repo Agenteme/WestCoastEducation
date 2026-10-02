@@ -8,8 +8,4 @@ public class Administratör : Utbildningsledare
         
     }
     protected override string Roll => "Administratör";
-    public override string ToString()
-    {
-        return $"{base.ToString()}";
-    }
 }
