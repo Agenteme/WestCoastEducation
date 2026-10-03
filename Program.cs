@@ -1,4 +1,6 @@
-﻿namespace WestCoastEducation;
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace WestCoastEducation;
 
 class Program
 {
@@ -10,11 +12,15 @@ class Program
         var administratör1 = new Administratör("Sven", "Martinsson", "0403738589", "670328-3412", "Rotgatan 2", "25430", "Kläggeröd", "Franska", new DateTime(2024, 4, 12));
         var klassrumskurs1 = new Klassrumskurs(101, "Webbutveckling", 10, Tidsenhet.Veckor, new DateTime(2026, 11, 2), new DateTime(2027, 1, 15));
         var distanskurs1 = new Distanskurs(105, "SO", 3, Tidsenhet.Dagar, new DateTime(2026, 10, 2), new DateTime(2026, 10, 05));
-        Console.WriteLine(student1);
-        Console.WriteLine(lärare1);
-        Console.WriteLine(utbildningsledare1);
-        Console.WriteLine(administratör1);
-        Console.WriteLine(klassrumskurs1);
-        Console.WriteLine(distanskurs1);
+        
+        var register = new Register();
+        register.LäggTillStudent(student1);
+        register.LäggTillPersonal(lärare1);
+        register.LäggTillPersonal(utbildningsledare1);
+        register.LäggTillPersonal(administratör1);
+        register.LäggTillKurs(klassrumskurs1);
+        register.LäggTillKurs(distanskurs1);
+
+        register.ListaKurser();
     }
 }
