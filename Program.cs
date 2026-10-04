@@ -22,5 +22,7 @@ class Program
         register.LäggTillKurs(distanskurs1);
 
         register.ListaKurser();
+        register.ListaStudenter();
+        register.ListaPersonal();
     }
 }
