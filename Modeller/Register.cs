@@ -8,11 +8,12 @@ public class Register
 
     public void LäggTillKurs(Kurs kurs)
     {
-        foreach (var sammakurs in Kurser)
+        foreach (var sammaKurs in Kurser)
         {
-            if (sammakurs.Kursnummer == kurs.Kursnummer)
+            if (sammaKurs.Kursnummer == kurs.Kursnummer)
             {
                 Console.WriteLine($"Kursnummer {kurs.Kursnummer} finns redan i registret.");
+                return;
             }
         }
         Kurser.Add(kurs);
@@ -28,6 +29,14 @@ public class Register
     }
     public void LäggTillStudent(Studerande student)
     {
+        foreach(var sammaStudent in Studenter)
+        {
+            if (sammaStudent.Personnummer == student.Personnummer)
+            {
+                Console.WriteLine($"Elev med personnummer{student.Personnummer} är redan inskriven på skolan");
+                return;
+            }
+        }
         Studenter.Add(student);
     }
 
@@ -42,6 +51,14 @@ public class Register
 
     public void LäggTillPersonal(Lärare personal)
     {
+        foreach(var sammaPersonal in Personal)
+        {
+            if (sammaPersonal.Personnummer == personal.Personnummer)
+            {
+                Console.WriteLine($"Lärare med personnummer {personal.Personnummer} är redan anställd på skolan");
+                return;
+            }
+        }
         Personal.Add(personal);
     }
     public void ListaPersonal()
