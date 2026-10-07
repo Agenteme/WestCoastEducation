@@ -9,6 +9,23 @@ public class Lärare : Person
     {
         Kunskapsområde = kunskapsområde;
     }
+    
+    public void TilldelaKurs(Kurs kurs)
+    {
+        if (this is Administratör or Utbildningsledare)
+        {
+            Console.WriteLine("Administratörer och utbildningsledare handhaver inte kurserna, lägg till en lärare istället");
+            return;
+        }
+        if (kurs.AnsvarigLärare != null)
+        {
+            Console.WriteLine($"Kurs {kurs.Kursnummer} {kurs.Kurstitel} har redan en tilldelad lärare");
+            return;
+        }
+        kurs.AnsvarigLärare = this;
+        AnsvarigaKurser.Add(kurs);
+    }
+
     protected override string Roll => "Lärare";
     public override string ToString()
     {
