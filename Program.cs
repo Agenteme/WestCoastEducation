@@ -28,6 +28,9 @@ class Program
         //Koppla kurs med lärare
         lärare1.TilldelaKurs(distanskurs1);
 
+        //Elev som bokar kurs
+        student1.BokadeKurser.Add(klassrumskurs1);
+
         //Visa listor
         register.ListaKurser();
         register.ListaStudenter();

@@ -19,9 +19,12 @@ public abstract class Kurs
         Slutdatum = slutdatum;
     }
     public Lärare? AnsvarigLärare { get; set; }
+    public Studerande? KursDeltagare { get; set; }
     protected virtual string Kurstyp => "Kurs";
     public override string ToString()
     {
-        return $"Kurstyp: {Kurstyp}, Kursnummer: {Kursnummer}, Kurstitel: {Kurstitel}, Kurslängd: {Kurslängd} {Tidsenhet.ToString().ToLower()}, Startdatum: {Startdatum:yyyy-MM-dd}, Slutdatum: {Slutdatum:yyyy-MM-dd}, Lärare: {AnsvarigLärare?.Förnamn} {AnsvarigLärare?.Efternamn}";
+        return $@"Kurstyp: {Kurstyp}, Kursnummer: {Kursnummer}, Kurstitel: {Kurstitel}, Kurslängd: {Kurslängd} {Tidsenhet.ToString().ToLower()}, 
+        Startdatum: {Startdatum:yyyy-MM-dd}, Slutdatum: {Slutdatum:yyyy-MM-dd}, Lärare: {AnsvarigLärare?.Förnamn} {AnsvarigLärare?.Efternamn}, 
+        Elever: {KursDeltagare?.Förnamn} {KursDeltagare?.Efternamn}";
     }
 }
