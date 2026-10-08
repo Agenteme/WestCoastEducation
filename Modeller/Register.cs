@@ -27,7 +27,7 @@ public class Register
             Console.WriteLine($"{kurs}");
         }
     }
-    public void LäggTillStudent(Studerande student)
+    public void SkapaStudentData(Studerande student)
     {
         foreach(var sammaStudent in Studenter)
         {
@@ -39,7 +39,6 @@ public class Register
         }
         Studenter.Add(student);
     }
-
     public void ListaStudenter()
     {
         Console.WriteLine("\nStuderande:");

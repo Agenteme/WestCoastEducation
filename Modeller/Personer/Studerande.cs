@@ -18,7 +18,7 @@ public class Studerande : Person
                 return;
             }
         }
-        kurs.KursDeltagare = this;
+        kurs.KursDeltagare.Add(this);
         BokadeKurser.Add(kurs);
     }
     protected override string Roll => "Studerande";

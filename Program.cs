@@ -1,13 +1,18 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace WestCoastEducation;
+﻿namespace WestCoastEducation;
 
 class Program
 {
     static void Main()
     {
+        var register = new Register();
+        TestData(register);
+        Meny.HuvudMeny(register);
+    }
+    static void TestData(Register register)
+    {
         //Lägg till objekt
-        var student1 = new Studerande("Anna", "Svensson", "0701234567", "900101-1234", "Storgatan 1", "41263", "Göteborg");
+        var student1 = new Studerande("Anna", "Svensson", "0701234567", "900101-1244", "Storgatan 1", "41263", "Göteborg");
+        var student2 = new Studerande("Stefan", "Persson", "0731254367", "950211-9534", "Gatgatan 4", "42343", "Stockholm");
         var lärare1 = new Lärare ("Emma", "Larsson", "0737077196", "561130-0543", "Satgatan 38", "23451", "Arlöv", "Historia");
         var lärareDublett = new Lärare ("Emma", "Larsson", "0737077196", "561130-0543", "Satgatan 38", "23451", "Arlöv", "Historia");
         var utbildningsledare1 = new Utbildningsledare("Hans", "Danielsson", "0703429874", "790515-4335", "The Gata 34", "25435", "Malmö", "Handledarskap", new DateTime(2015, 9, 27));
@@ -16,8 +21,8 @@ class Program
         var distanskurs1 = new Distanskurs(105, "Historia", 3, Tidsenhet.Dagar, new DateTime(2026, 10, 2), new DateTime(2026, 10, 05), "Zoom");
         
         //Lägg till objket i listor
-        var register = new Register();
-        register.LäggTillStudent(student1);
+        register.SkapaStudentData(student1);
+        register.SkapaStudentData(student2);
         register.LäggTillPersonal(lärare1);
         register.LäggTillPersonal(lärareDublett);
         register.LäggTillPersonal(utbildningsledare1);
@@ -29,11 +34,14 @@ class Program
         lärare1.TilldelaKurs(distanskurs1);
 
         //Elev som bokar kurs
-        student1.BokadeKurser.Add(klassrumskurs1);
+        student1.BokaKurs(klassrumskurs1);
+        student2.BokaKurs(klassrumskurs1);
 
         //Visa listor
         register.ListaKurser();
         register.ListaStudenter();
         register.ListaPersonal();
+
+        Console.WriteLine();
     }
 }

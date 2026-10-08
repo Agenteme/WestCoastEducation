@@ -19,12 +19,25 @@ public abstract class Kurs
         Slutdatum = slutdatum;
     }
     public Lärare? AnsvarigLärare { get; set; }
-    public Studerande? KursDeltagare { get; set; }
+    public List <Studerande> KursDeltagare { get; set; } = [];
+    private string ListaStudenterPerKurs()
+    {
+        if (KursDeltagare.Count == 0)
+        {
+            return "Inga anmälda elever till kursen";
+        }
+        string elever = "";
+        foreach (var student in KursDeltagare)
+        {
+            elever += $"{student.Förnamn} {student.Efternamn}, ";
+        }
+        return elever.TrimEnd(',', ' ');
+    }
     protected virtual string Kurstyp => "Kurs";
     public override string ToString()
     {
         return $@"Kurstyp: {Kurstyp}, Kursnummer: {Kursnummer}, Kurstitel: {Kurstitel}, Kurslängd: {Kurslängd} {Tidsenhet.ToString().ToLower()}, 
-        Startdatum: {Startdatum:yyyy-MM-dd}, Slutdatum: {Slutdatum:yyyy-MM-dd}, Lärare: {AnsvarigLärare?.Förnamn} {AnsvarigLärare?.Efternamn}, 
-        Elever: {KursDeltagare?.Förnamn} {KursDeltagare?.Efternamn}";
+        Startdatum: {Startdatum:yyyy-MM-dd}, Slutdatum: {Slutdatum:yyyy-MM-dd}, Lärare: {AnsvarigLärare?.Förnamn} {AnsvarigLärare?.Efternamn},
+        Elever: {ListaStudenterPerKurs()}";
     }
 }
