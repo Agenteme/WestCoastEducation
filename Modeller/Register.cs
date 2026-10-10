@@ -6,17 +6,17 @@ public class Register
     public List<Studerande> Studenter { get; set; } = [];
     public List<Lärare> Personal { get; set; } = [];
 
-    public void LäggTillKurs(Kurs kurs)
+    public void LäggTillKurs(Kurs kursAttLäggaTill)
     {
-        foreach (var sammaKurs in Kurser)
+        foreach (var Kurs in Kurser)
         {
-            if (sammaKurs.Kursnummer == kurs.Kursnummer)
+            if (Kurs.Kursnummer == kursAttLäggaTill.Kursnummer)
             {
-                Console.WriteLine($"Kursnummer {kurs.Kursnummer} finns redan i registret.");
+                Console.WriteLine($"Kursnummer {kursAttLäggaTill.Kursnummer} finns redan i registret.");
                 return;
             }
         }
-        Kurser.Add(kurs);
+        Kurser.Add(kursAttLäggaTill);
     }
 
     public void ListaKurser()

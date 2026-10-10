@@ -4,8 +4,8 @@ public class Meny
 {
     public static void HuvudMeny(Register register)
     {
-        bool körmeny = true;
-        while (körmeny)
+        bool körMeny = true;
+        while (körMeny)
         {
             Console.WriteLine("=== Westcoast Education ===");
             Console.WriteLine("1. Lista Kurser");
@@ -30,7 +30,7 @@ public class Meny
                     LäggTillStudent(register);
                     break;
                 case "0":
-                    körmeny = false;
+                    körMeny = false;
                     break;
                 default:
                     Console.WriteLine("Nähädu, felaktig inmatning, prova igen\n");

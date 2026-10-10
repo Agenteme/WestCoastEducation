@@ -8,18 +8,18 @@ public class Studerande : Person
     {
         
     }
-    public void BokaKurs(Kurs kurs)
+    public void BokaKurs(Kurs kursAttBoka)
     {
-        foreach (var sammaKurs in BokadeKurser)
+        foreach (var Kurs in BokadeKurser)
         {
-            if (sammaKurs.Kursnummer == kurs.Kursnummer)
+            if (Kurs.Kursnummer == kursAttBoka.Kursnummer)
             {
-                Console.WriteLine($"Elev är redan bokad på {kurs.Kursnummer}.");
+                Console.WriteLine($"Elev är redan bokad på {kursAttBoka.Kursnummer}.");
                 return;
             }
         }
-        kurs.KursDeltagare.Add(this);
-        BokadeKurser.Add(kurs);
+        kursAttBoka.KursDeltagare.Add(this);
+        BokadeKurser.Add(kursAttBoka);
     }
     protected override string Roll => "Studerande";
 }
