@@ -33,7 +33,7 @@ public abstract class Kurs
         }
         return elever.TrimEnd(',', ' ');
     }
-    protected virtual string Kurstyp => "Kurs";
+    public abstract KursForm Kurstyp { get; }
     public override string ToString()
     {
         return $@"Kurstyp: {Kurstyp}, Kursnummer: {Kursnummer}, Kurstitel: {Kurstitel}, Kurslängd: {Kurslängd} {Tidsenhet.ToString().ToLower()}, 

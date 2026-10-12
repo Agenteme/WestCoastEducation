@@ -8,7 +8,7 @@ public class Distanskurs : Kurs
     {
         Plattform = plattform;
     }
-    protected override string Kurstyp => "Distanskurs";
+    public override KursForm Kurstyp => KursForm.Distans;
     public override string ToString()
     {
         return $"{base.ToString()}, Plattform: {Plattform}";

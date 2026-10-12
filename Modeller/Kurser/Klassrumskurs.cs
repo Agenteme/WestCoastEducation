@@ -8,7 +8,7 @@ public class Klassrumskurs : Kurs
     {
         Salsnummer = salsnummer;
     }
-    protected override string Kurstyp => "Klassrumskurs";
+    public override KursForm Kurstyp => KursForm.Klassrum;
     public override string ToString()
     {
         return $"{base.ToString()}, Salsnummer: {Salsnummer}";
