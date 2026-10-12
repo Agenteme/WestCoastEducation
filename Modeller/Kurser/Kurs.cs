@@ -1,5 +1,10 @@
 ﻿namespace WestCoastEducation;
 
+using System.Text.Json.Serialization;
+
+[JsonPolymorphic(TypeDiscriminatorPropertyName = "typ")]
+[JsonDerivedType(typeof(Klassrumskurs), "klassrum")]
+[JsonDerivedType(typeof(Distanskurs), "distans")]
 public abstract class Kurs : IMittInterface
 {
     public int Kursnummer { get; set; }
@@ -18,7 +23,9 @@ public abstract class Kurs : IMittInterface
         Startdatum = startdatum;
         Slutdatum = slutdatum;
     }
+    [JsonIgnore]
     public Lärare? AnsvarigLärare { get; set; }
+    [JsonIgnore]
     public List <Studerande> KursDeltagare { get; set; } = [];
     private string ListaStudenterIKurs()
     {

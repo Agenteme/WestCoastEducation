@@ -1,5 +1,5 @@
 ﻿namespace WestCoastEducation;
-
+using System.Text.Json;
 public class Register
 {
     public List<Kurs> Kurser { get; set; } = [];
@@ -66,6 +66,36 @@ public class Register
         foreach (var personal in Personal)
         {
             Console.WriteLine($"{personal}");
+        }
+    }
+    
+    //Json-metoder-grejs
+    public void SparaKurserTillJson(string sökväg)
+    {
+        var inställningar = new JsonSerializerOptions { WriteIndented = true };
+        string json = JsonSerializer.Serialize(Kurser, inställningar);
+        File.WriteAllText(sökväg, json);
+        Console.WriteLine($"{Kurser.Count} kurser sparade till {sökväg}");
+    }
+
+    public void LäsKurserFrånJson(string sökväg)
+    {
+        if (!File.Exists(sökväg))
+        {
+            Console.WriteLine("Filen finns inte.");
+            return;
+        }
+            string json = File.ReadAllText(sökväg);
+            var inlästaKurser = JsonSerializer.Deserialize<List<Kurs>>(json);
+        if (inlästaKurser == null)
+        {
+            Console.WriteLine("Kunde inte läsa filen.");
+            return;
+        }
+
+        foreach (var kurs in inlästaKurser)
+        {
+            LäggTillKurs(kurs);
         }
     }
 }

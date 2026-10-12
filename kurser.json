@@ -1,0 +1,24 @@
+[
+  {
+    "typ": "klassrum",
+    "Salsnummer": 1,
+    "Kurstyp": 0,
+    "Kursnummer": 101,
+    "Kurstitel": "Webbutveckling",
+    "Kursl\u00E4ngd": 10,
+    "Tidsenhet": 1,
+    "Startdatum": "2026-11-02T00:00:00",
+    "Slutdatum": "2027-01-15T00:00:00"
+  },
+  {
+    "typ": "distans",
+    "Plattform": "Zoom",
+    "Kurstyp": 1,
+    "Kursnummer": 105,
+    "Kurstitel": "Historia",
+    "Kursl\u00E4ngd": 3,
+    "Tidsenhet": 0,
+    "Startdatum": "2026-10-02T00:00:00",
+    "Slutdatum": "2026-10-05T00:00:00"
+  }
+]
