@@ -50,6 +50,7 @@ public class Meny
             }
         }
     }
+    //Elände:
     private static string LäsInmatning(string fråga)
     {
         Console.Write(fråga);
