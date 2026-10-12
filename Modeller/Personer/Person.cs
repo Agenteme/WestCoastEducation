@@ -1,6 +1,6 @@
 ﻿namespace WestCoastEducation;
 
-public abstract class Person
+public abstract class Person : IMittInterface
 {
     public string Förnamn { get; set; }
     public string Efternamn { get; set; }
@@ -24,5 +24,9 @@ public abstract class Person
     public override string ToString()
     {
         return $"Roll: {Roll}, Förnamn: {Förnamn}, Efternamn: {Efternamn}, Telefon: {Telefonnummer}, Personnummer: {Personnummer}, Adress: {Adress}, Postnummer: {Postnummer}, Ort: {Ort}";
+    }
+    public string Presentera()
+    {
+        return ToString();
     }
 }

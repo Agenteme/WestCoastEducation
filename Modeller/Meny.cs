@@ -12,6 +12,7 @@ public class Meny
             Console.WriteLine("2. Lista Studenter");
             Console.WriteLine("3. Lista Personal");
             Console.WriteLine("4. Lägg till Student");
+            Console.WriteLine("5. Lägg till Lärare");
             Console.WriteLine("0. Stäng av");
             string? knappval = Console.ReadLine();
 
@@ -29,6 +30,9 @@ public class Meny
                 case "4":
                     LäggTillStudent(register);
                     break;
+                case "5":
+                    LäggTillLärare(register);
+                    break;
                 case "0":
                     körMeny = false;
                     break;
@@ -44,18 +48,34 @@ public class Meny
         return Console.ReadLine() ?? "";
     }
     private static void LäggTillStudent(Register register)
-{
-    Console.WriteLine("\n--- Lägg till student ---");
-    string förnamn = LäsInmatning("Förnamn: ");
-    string efternamn = LäsInmatning("Efternamn: ");
-    string telefon = LäsInmatning("Telefon: ");
-    string personnummer = LäsInmatning("Personnummer: ");
-    string adress = LäsInmatning("Adress: ");
-    string postnummer = LäsInmatning("Postnummer: ");
-    string ort = LäsInmatning("Ort: ");
+    {
+        Console.WriteLine("\nLägg till student");
+        string förnamn = LäsInmatning("Förnamn: ");
+        string efternamn = LäsInmatning("Efternamn: ");
+        string telefon = LäsInmatning("Telefon: ");
+        string personnummer = LäsInmatning("Personnummer: ");
+        string adress = LäsInmatning("Adress: ");
+        string postnummer = LäsInmatning("Postnummer: ");
+        string ort = LäsInmatning("Ort: ");
 
-    var student = new Studerande(förnamn, efternamn, telefon, personnummer, adress, postnummer, ort);
-    register.SkapaStudentData(student);
-    Console.WriteLine("Studenten är tillagd.\n");
-}
+        var student = new Studerande(förnamn, efternamn, telefon, personnummer, adress, postnummer, ort);
+        register.SkapaStudentdata(student);
+        Console.WriteLine("Studenten är tillagd.\n");
+    }
+        private static void LäggTillLärare(Register register)
+    {
+        Console.WriteLine("\nLägg till lärare");
+        string förnamn = LäsInmatning("Förnamn: ");
+        string efternamn = LäsInmatning("Efternamn: ");
+        string telefon = LäsInmatning("Telefon: ");
+        string personnummer = LäsInmatning("Personnummer: ");
+        string adress = LäsInmatning("Adress: ");
+        string postnummer = LäsInmatning("Postnummer: ");
+        string ort = LäsInmatning("Ort: ");
+        string kunskapsområde = LäsInmatning("Kunskapsområde: ");
+
+        var lärare = new Lärare(förnamn, efternamn, telefon, personnummer, adress, postnummer, ort, kunskapsområde);
+        register.SkapaPersonaldata(lärare);
+        Console.WriteLine("Läraren är tillagd.\n");
+    }
 }

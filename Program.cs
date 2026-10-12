@@ -21,12 +21,12 @@ class Program
         var distanskurs1 = new Distanskurs(105, "Historia", 3, Tidsenhet.Dagar, new DateTime(2026, 10, 2), new DateTime(2026, 10, 05), "Zoom");
         
         //Lägg till objket i listor
-        register.SkapaStudentData(student1);
-        register.SkapaStudentData(student2);
-        register.LäggTillPersonal(lärare1);
-        register.LäggTillPersonal(lärareDublett);
-        register.LäggTillPersonal(utbildningsledare1);
-        register.LäggTillPersonal(administratör1);
+        register.SkapaStudentdata(student1);
+        register.SkapaStudentdata(student2);
+        register.SkapaPersonaldata(lärare1);
+        register.SkapaPersonaldata(lärareDublett);
+        register.SkapaPersonaldata(utbildningsledare1);
+        register.SkapaPersonaldata(administratör1);
         register.LäggTillKurs(klassrumskurs1);
         register.LäggTillKurs(distanskurs1);
 

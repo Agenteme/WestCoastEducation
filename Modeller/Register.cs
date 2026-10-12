@@ -27,7 +27,7 @@ public class Register
             Console.WriteLine($"{kurs}");
         }
     }
-    public void SkapaStudentData(Studerande student)
+    public void SkapaStudentdata(Studerande student)
     {
         foreach(var sammaStudent in Studenter)
         {
@@ -48,7 +48,7 @@ public class Register
         }
     }
 
-    public void LäggTillPersonal(Lärare personal)
+    public void SkapaPersonaldata(Lärare personal)
     {
         foreach(var sammaPersonal in Personal)
         {

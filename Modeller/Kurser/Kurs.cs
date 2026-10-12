@@ -1,6 +1,6 @@
 ﻿namespace WestCoastEducation;
 
-public abstract class Kurs
+public abstract class Kurs : IMittInterface
 {
     public int Kursnummer { get; set; }
     public string Kurstitel { get; set; }
@@ -39,5 +39,9 @@ public abstract class Kurs
         return $@"Kurstyp: {Kurstyp}, Kursnummer: {Kursnummer}, Kurstitel: {Kurstitel}, Kurslängd: {Kurslängd} {Tidsenhet.ToString().ToLower()}, 
         Startdatum: {Startdatum:yyyy-MM-dd}, Slutdatum: {Slutdatum:yyyy-MM-dd}, Lärare: {AnsvarigLärare?.Förnamn} {AnsvarigLärare?.Efternamn},
         Elever: {ListaStudenterIKurs()}";
+    }
+    public string Presentera()
+    {
+        return ToString();
     }
 }
