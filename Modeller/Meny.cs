@@ -13,8 +13,8 @@ public class Meny
             Console.WriteLine("3. Lista Personal");
             Console.WriteLine("4. Lägg till Student");
             Console.WriteLine("5. Lägg till Lärare");
-            Console.WriteLine("9. Spara kurser till JSON");
-            Console.WriteLine("0. Läs kurser från JSON");
+            Console.WriteLine("6. Spara kurser till JSON");
+            Console.WriteLine("7. Läs kurser från JSON");
             Console.WriteLine("x. Stäng av");
             string? knappval = Console.ReadLine();
 
@@ -35,10 +35,10 @@ public class Meny
                 case "5":
                     LäggTillLärare(register);
                     break;
-                case "9":
+                case "6":
                     register.SparaKurserTillJson("kurser.json");
                     break;
-                case "0":
+                case "7":
                     register.LäsKurserFrånJson("kurser.json");
                     break;
                 case "x":

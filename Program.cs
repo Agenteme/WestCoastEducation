@@ -2,6 +2,7 @@
 
 class Program
 {
+    //Jag har lärt mig en läxa och kommer i framtiden använda engelska namn på variabler men det blev såhär denna gången :D
     static void Main()
     {
         var register = new Register();

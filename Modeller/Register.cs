@@ -69,7 +69,7 @@ public class Register
         }
     }
     
-    //Json-metoder-grejs
+    //Json-grejs
     public void SparaKurserTillJson(string sökväg)
     {
         var inställningar = new JsonSerializerOptions { WriteIndented = true };
